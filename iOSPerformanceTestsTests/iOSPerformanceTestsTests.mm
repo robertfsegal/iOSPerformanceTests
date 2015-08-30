@@ -49,8 +49,56 @@
 
 -(void)testCustomComplexObjectAllocator
 {
-    MyCustomComplexObject *a = [[MyCustomComplexObject alloc] init];
-    [a release];
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    
+    NSLog(@"Allocating complex object...");
+    
+    NSTimeInterval total = 0;
+
+    const int kNumTests = 10000;
+    
+    for(int i = 0; i < kNumTests; i++)
+    {
+        NSTimeInterval start = [[NSDate date] timeIntervalSince1970];
+        
+        MyCustomComplexObject *a = [[[MyCustomComplexObject alloc] init] autorelease];
+        [arr addObject:a];
+        
+        NSTimeInterval end = [[NSDate date] timeIntervalSince1970];
+
+        total += end - start;
+    }
+    
+    NSLog(@"Done allocations of complex object.  Avg. of %f seconds", total);
+    
+    for(int i = 0; i < kNumTests; i++)
+    {
+        MyCustomComplexObject *a = arr[i];
+        [a release];
+    }
+    
+    [arr removeAllObjects];
+   
+     NSLog(@"Allocating complex object from cache...");
+    
+    total = 0;
+    
+    for(int i = 0; i < kNumTests; i++)
+    {
+        NSTimeInterval start = [[NSDate date] timeIntervalSince1970];
+        
+        MyCustomComplexObject *a = [[[MyCustomComplexObject alloc] init] autorelease];
+        [arr addObject:a];
+        
+        NSTimeInterval end = [[NSDate date] timeIntervalSince1970];
+        
+        total += end - start;
+    }
+    
+    NSLog(@"Done allocations of complex object from cache.  Avg. of %f seconds", total);
+    
+    
+    [arr release];
 }
 
 
