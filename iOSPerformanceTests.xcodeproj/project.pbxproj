@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F0473621B93ACCF000F2C3A /* MyCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0473611B93ACCF000F2C3A /* MyCustomObject.m */; };
+		6F0473651B93AF6C000F2C3A /* MyCustomComplexObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0473641B93AF6C000F2C3A /* MyCustomComplexObject.m */; };
 		6FAFEEF31B80494E00258756 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEEF21B80494E00258756 /* main.m */; };
 		6FAFEEF61B80494E00258756 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEEF51B80494E00258756 /* AppDelegate.m */; };
 		6FAFEEF91B80494E00258756 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEEF81B80494E00258756 /* ViewController.m */; };
@@ -27,6 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F0473601B93ACCF000F2C3A /* MyCustomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomObject.h; sourceTree = "<group>"; };
+		6F0473611B93ACCF000F2C3A /* MyCustomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomObject.m; sourceTree = "<group>"; };
+		6F0473631B93AF6C000F2C3A /* MyCustomComplexObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomComplexObject.h; sourceTree = "<group>"; };
+		6F0473641B93AF6C000F2C3A /* MyCustomComplexObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomComplexObject.m; sourceTree = "<group>"; };
 		6FAFEEED1B80494E00258756 /* iOSPerformanceTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSPerformanceTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAFEEF11B80494E00258756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FAFEEF21B80494E00258756 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +95,10 @@
 				6FAFEEFD1B80494E00258756 /* Images.xcassets */,
 				6FAFEEFF1B80494E00258756 /* LaunchScreen.xib */,
 				6FAFEEF01B80494E00258756 /* Supporting Files */,
+				6F0473601B93ACCF000F2C3A /* MyCustomObject.h */,
+				6F0473611B93ACCF000F2C3A /* MyCustomObject.m */,
+				6F0473631B93AF6C000F2C3A /* MyCustomComplexObject.h */,
+				6F0473641B93AF6C000F2C3A /* MyCustomComplexObject.m */,
 			);
 			path = iOSPerformanceTests;
 			sourceTree = "<group>";
@@ -222,6 +232,8 @@
 				6FAFEEF91B80494E00258756 /* ViewController.m in Sources */,
 				6FAFEEF61B80494E00258756 /* AppDelegate.m in Sources */,
 				6FAFEEF31B80494E00258756 /* main.m in Sources */,
+				6F0473621B93ACCF000F2C3A /* MyCustomObject.m in Sources */,
+				6F0473651B93AF6C000F2C3A /* MyCustomComplexObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +282,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -314,7 +326,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -352,6 +364,7 @@
 				INFOPLIST_FILE = iOSPerformanceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../iOSPerformanceTests/**";
 			};
 			name = Debug;
 		};
@@ -362,6 +375,7 @@
 				INFOPLIST_FILE = iOSPerformanceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../iOSPerformanceTests/**";
 			};
 			name = Release;
 		};
@@ -369,6 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -388,6 +403,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
