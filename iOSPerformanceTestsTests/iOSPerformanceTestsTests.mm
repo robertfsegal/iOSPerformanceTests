@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import <dispatch/dispatch.h>
+
+#import "MyCustomObject.h"
+#import "MyCustomComplexObject.h"
 
 @interface iOSPerformanceTestsTests : XCTestCase
 
@@ -38,82 +40,19 @@
     }];
 }
 
--(void)testNSDictionaryWithFile
+-(void)testCustomObjectAllocator
 {
-    NSTimeInterval start = [NSDate date].timeIntervalSince1970;
+    MyCustomObject *a = [[MyCustomObject alloc] init];
     
-    NSString *s = [[NSBundle mainBundle] pathForResource:@"test-file-1.plist" ofType:@""];
-    
-    NSDictionary *d = [NSDictionary dictionaryWithContentsOfFile:s];
-    
-    if (d)
-    {
-        
-    }
-    
-    NSTimeInterval end = [NSDate date].timeIntervalSince1970;
-    
-    NSLog(@"Time -> %lf", end - start);
+    [a release];
 }
 
--(void)testNSDictionaryWithNSURL
+-(void)testCustomComplexObjectAllocator
 {
-    NSTimeInterval start = [NSDate date].timeIntervalSince1970;
-    
-    NSURL *u = [[NSBundle mainBundle] URLForResource:@"test-file-1.plist" withExtension:@""];
-    
-    NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:u];
-    
-    if (d)
-    {
-        
-    }
-    
-    NSTimeInterval end = [NSDate date].timeIntervalSince1970;
-    
-    
-    NSLog(@"Time -> %lf", end - start);
+    MyCustomComplexObject *a = [[MyCustomComplexObject alloc] init];
+    [a release];
 }
 
--(void)testNSDictionaryWithIOChannel
-{
-    NSString *s = [[NSBundle mainBundle] pathForResource:@"test-file-1.plist" ofType:@""];
-    
-   
-    dispatch_fd_t t = open([s UTF8String], O_RDONLY);
-    
-    dispatch_read(t, 4 * sizeof(int), dispatch_get_main_queue(), ^(dispatch_data_t data, int error)
-    {
-        printf("Read %zu bytes!\n", dispatch_data_get_size(data));
-        printf("\tError: %d\n", error);
-    });
-    
-    //    dispatch_io_t t = dispatch_io_create_with_path(DISPATCH_IO_RANDOM,
-    //                                                [s UTF8String],   // Convert to C-string
-    //                                                O_RDONLY,                // Open for reading
-    //                                                0,                       // No extra flags
-    //                                                dispatch_get_main_queue(),
-    //                                                ^(int error){
-    //                                                    // Cleanup code for normal channel operation.
-    //                                                    // Assumes that dispatch_io_close was called elsewhere.
-    //                                                    if (error == 0) {
-    //                                                        //dispatch_release(t);
-    //
-    //                                                    }
-    //                                                });
- 
-    
-//
-//    
-//    [is read:<#(uint8_t *)#> maxLength:<#(NSUInteger)#>
-//    
-//    
-//    [NSKeyedUnarchiver unarchiveObjectWithData:<#(NSData *)#>
-    //std::map<NSString *, id> m;
-    
-    
-    
-}
 
 
 @end
