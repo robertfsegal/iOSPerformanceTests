@@ -13,19 +13,31 @@ static id gCacheListHead;
 
 @implementation MyCustomComplexObject
 
-+ (id)allocWithZone:(NSZone *)zone
+//+ (id)allocWithZone:(NSZone *)zone
+//{
+//    id obj = GetObjectFromCache();
+//    
+//    if(obj)
+//    {
+//        *(Class *)obj = self;
+//    }
+//    else
+//    {
+//        obj = [super allocWithZone: zone];
+//    }
+//    
+//    return obj;
+//}
+
++ (id)allocWithZone: (NSZone *)zone
 {
     id obj = GetObjectFromCache();
-    
-    if(obj)
+    if(!obj)
     {
-        *(Class *)obj = self;
+        AllocateNewBlockAndCache(self);
+        obj = GetObjectFromCache();
     }
-    else
-    {
-        obj = [super allocWithZone: zone];
-    }
-    
+    *(Class *)obj = self;
     return obj;
 }
 
@@ -37,6 +49,21 @@ static id gCacheListHead;
     // shut up the compiler
     return;
     [super dealloc];
+}
+
+static void AllocateNewBlockAndCache(Class class)
+{
+    static size_t kBlockSize = 4096;
+    char *newBlock = malloc(kBlockSize);
+    
+    size_t instanceSize = class_getInstanceSize(class);
+    unsigned long instanceCount = kBlockSize / instanceSize;
+    
+    while(instanceCount-- > 0)
+    {
+        AddObjectToCache((id)newBlock);
+        newBlock += instanceSize;
+    }
 }
 
 static id GetNext(id cachedObj)
