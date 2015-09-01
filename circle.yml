@@ -1,2 +1,3 @@
 test:
-   xcodebuild test -destination 'platform=iOS,name=iPod touch'
+	post:
+ 		xcodebuild test -destination 'platform=iOS,name=iPod touch'
