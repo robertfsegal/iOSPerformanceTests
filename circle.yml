@@ -1,3 +1,3 @@
 test:
  override:
-  - xctool test -destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'
+  - xctool test -scheme iOSPerformanceTests -destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'
