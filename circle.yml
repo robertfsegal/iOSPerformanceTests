@@ -1,3 +1,2 @@
 test:
- post:
-  xcodebuild test -destination 'platform=iOS,name=iPod touch'
+  xctool test -destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'
