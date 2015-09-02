@@ -1,3 +1,4 @@
 language: objective-c
 osx_image: xcode6.4
-xctool test -sdk iphonesimulator -scheme iOSPerformanceTests -destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'
+xcode_project: iOSPerformanceTests.xcodeproj # path to your xcodeproj folder
+xcode_scheme: iOSPerformanceTests
