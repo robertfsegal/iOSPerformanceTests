@@ -1,5 +1,1 @@
-test:
- override:
-  - xctool test -sdk iphonesimulator -scheme iOSPerformanceTests -destination 'platform=iOS Simulator,name=iPhone 5,OS=latest'
-  - xctool test -sdk iphonesimulator -scheme iOSPerformanceTests -destination 'platform=iOS Simulator,name=iPhone 4s,OS=latest'
-  - xctool test -sdk iphonesimulator -scheme iOSPerformanceTests -destination 'platform=iOS Simulator,name=iPhone 6 Plus,OS=latest'
+language: objective-c
