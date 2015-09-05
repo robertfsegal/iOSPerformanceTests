@@ -38,81 +38,26 @@
     }];
 }
 
--(void)testNSDictionaryWithFile
+static const int kNumTests = 1000000;
+
+-(void)testAllocation
 {
-    NSTimeInterval start = [NSDate date].timeIntervalSince1970;
+    NSMutableArray *arr = [NSMutableArray array];
     
-    NSString *s = [[NSBundle mainBundle] pathForResource:@"test-file-1.plist" ofType:@""];
-    
-    NSDictionary *d = [NSDictionary dictionaryWithContentsOfFile:s];
-    
-    if (d)
+    for (int i = 0; i < kNumTests; i++)
     {
-        
+        [arr addObject:[[NSObject alloc] init]];
     }
-    
-    NSTimeInterval end = [NSDate date].timeIntervalSince1970;
-    
-    NSLog(@"Time -> %lf", end - start);
 }
 
--(void)testNSDictionaryWithNSURL
+-(void)testAllocationWithNilZone
 {
-    NSTimeInterval start = [NSDate date].timeIntervalSince1970;
+    NSMutableArray *arr = [NSMutableArray array];
     
-    NSURL *u = [[NSBundle mainBundle] URLForResource:@"test-file-1.plist" withExtension:@""];
-    
-    NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:u];
-    
-    if (d)
+    for (int i = 0; i < kNumTests; i++)
     {
-        
+        [arr addObject:[[NSObject allocWithZone:nil] init]];
     }
-    
-    NSTimeInterval end = [NSDate date].timeIntervalSince1970;
-    
-    
-    NSLog(@"Time -> %lf", end - start);
-}
-
--(void)testNSDictionaryWithIOChannel
-{
-    NSString *s = [[NSBundle mainBundle] pathForResource:@"test-file-1.plist" ofType:@""];
-    
-   
-    dispatch_fd_t t = open([s UTF8String], O_RDONLY);
-    
-    dispatch_read(t, 4 * sizeof(int), dispatch_get_main_queue(), ^(dispatch_data_t data, int error)
-    {
-        printf("Read %zu bytes!\n", dispatch_data_get_size(data));
-        printf("\tError: %d\n", error);
-    });
-    
-    //    dispatch_io_t t = dispatch_io_create_with_path(DISPATCH_IO_RANDOM,
-    //                                                [s UTF8String],   // Convert to C-string
-    //                                                O_RDONLY,                // Open for reading
-    //                                                0,                       // No extra flags
-    //                                                dispatch_get_main_queue(),
-    //                                                ^(int error){
-    //                                                    // Cleanup code for normal channel operation.
-    //                                                    // Assumes that dispatch_io_close was called elsewhere.
-    //                                                    if (error == 0) {
-    //                                                        //dispatch_release(t);
-    //
-    //                                                    }
-    //                                                });
- 
-    
-//
-//    
-//    [is read:<#(uint8_t *)#> maxLength:<#(NSUInteger)#>
-//    
-//    
-//    [NSKeyedUnarchiver unarchiveObjectWithData:<#(NSData *)#>
-    //std::map<NSString *, id> m;
-    
-    
-    
 }
 
 
