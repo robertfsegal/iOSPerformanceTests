@@ -26,21 +26,9 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
+static const int kNumTests = 1000;
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
-
-static const int kNumTests = 1000000;
-
--(void)testAllocation
+-(void)testNSArray
 {
     NSMutableArray *arr = [NSMutableArray array];
     
@@ -48,15 +36,33 @@ static const int kNumTests = 1000000;
     {
         [arr addObject:[[NSObject alloc] init]];
     }
-}
-
--(void)testAllocationWithNilZone
-{
-    NSMutableArray *arr = [NSMutableArray array];
     
     for (int i = 0; i < kNumTests; i++)
     {
-        [arr addObject:[[NSObject allocWithZone:nil] init]];
+        NSObject *obj = arr[i];
+        
+        NSLog(@"Address is %@", obj);
+    }
+}
+
+#include <vector>
+
+using namespace std;
+
+-(void)testSTLVector
+{
+    vector<NSObject *> arr;
+    
+    for (int i = 0; i < kNumTests; i++)
+    {
+        arr.push_back([[NSObject alloc] init]);
+    }
+    
+    for (int i = 0; i < kNumTests; i++)
+    {
+        NSObject *obj = arr[i];
+        
+        NSLog(@"Address is %@", obj);
     }
 }
 
