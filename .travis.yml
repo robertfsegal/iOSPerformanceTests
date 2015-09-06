@@ -2,3 +2,4 @@ language: objective-c
 xcode_project: iOSPerformanceTests.xcodeproj
 xcode_scheme: iOSPerformanceTests
 xcode_sdk: iphonesimulator8.4
+osx_image: xcode6.4
