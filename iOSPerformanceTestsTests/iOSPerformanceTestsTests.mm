@@ -13,8 +13,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-#import "MyCustomObject.h"
-#import "MyCustomComplexObject.h"
+#include "flatbuffers/flatbuffers.h"
+#include "flatbuffers/idl.h"
+#include "flatbuffers/util.h"
+
+#include "pattern_generated.h"
 
 @interface iOSPerformanceTestsTests : XCTestCase
 
@@ -32,77 +35,100 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
-
--(void)testCustomObjectAllocator
+-(void)testPlistRead
 {
-    MyCustomObject *a = [[MyCustomObject alloc] init];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"pattern-flatbuffers-test.plist" ofType:@""];
+
+    NSTimeInterval start = [NSDate date].timeIntervalSince1970;
     
-    [a release];
+    for (int i = 0; i < 1; i++)
+    {
+      NSDictionary *p = [NSDictionary dictionaryWithContentsOfFile:path];
+    }
+    
+    NSTimeInterval end = [NSDate date].timeIntervalSince1970;
+    
+    NSLog(@"Parse time -> %lf", end - start);
+  
+      NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    start = [NSDate date].timeIntervalSince1970;
+    
+    
+    for (NSDictionary *d in plist[@"groups"])
+    {
+        for (NSDictionary *dd in d[@"objects"])
+        {
+            BOOL flipH = [dd[@"flip_horizontal"] boolValue];
+            NSString *group = dd[@"group"];
+            NSString *name = dd[@"name"];
+            NSNumber *rotation = dd[@"rotation"];
+            BOOL top = [dd[@"top"] boolValue];
+            NSString *type = dd[@"type"];
+            NSNumber *x = dd[@"x"];
+            NSString *y = dd[@"y"];
+            
+           // NSLog(@"name : %@", name);
+        }
+    }
+    
+    end = [NSDate date].timeIntervalSince1970;
+    
+    NSLog(@"Read time -> %lf", end - start);
 }
 
--(void)testCustomComplexObjectAllocator
+-(void)testFlatBufferRead
 {
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    flatbuffers::Parser parser;
     
-    NSLog(@"Allocating complex object...");
+  //  std::string schemafile;
+    std::string jsonfile;
     
-    NSTimeInterval total = 0;
+   // NSString *schemaPath = [[NSBundle mainBundle] pathForResource:@"pattern.fbs" ofType:@""];
+    NSString *dataPath   = [[NSBundle mainBundle] pathForResource:@"pattern-flatbuffers-test.plist.bin" ofType:@""];
+ 
+    const char* patternPath = [dataPath UTF8String];
+    
+    NSTimeInterval start = [NSDate date].timeIntervalSince1970;
+    
+    for (int i = 0; i < 1; i++)
+    {
+        flatbuffers::LoadFile(patternPath, true, &jsonfile);
+        
+        //const pattern *g = Getpattern(jsonfile.c_str());
+    }
+    
+    NSTimeInterval end = [NSDate date].timeIntervalSince1970;
+    NSLog(@"Parse time -> %lf", end - start);
 
-    const int kNumTests = 10000000;
+    const pattern *p = Getpattern(jsonfile.c_str());
     
-    for(int i = 0; i < kNumTests; i++)
-    {
-        NSTimeInterval start = [[NSDate date] timeIntervalSince1970];
-        
-        MyCustomComplexObject *a = [[[MyCustomComplexObject alloc] init] autorelease];
-        [arr addObject:a];
-        
-        NSTimeInterval end = [[NSDate date] timeIntervalSince1970];
+    start = [NSDate date].timeIntervalSince1970;
 
-        total += end - start;
-    }
-    
-    NSLog(@"Done allocations of complex object.  Total of %f seconds | Avg of %f seconds", total, total / kNumTests);
-    
-    for(int i = 0; i < kNumTests; i++)
+    for (auto it = p->groups()->begin(); it != p->groups()->end(); ++it)
     {
-        MyCustomComplexObject *a = arr[i];
-        [a release];
+        const aGroup *g    = (*it);
+
+        for (auto it2 = g->objects()->begin(); it2 != g->objects()->end(); ++it2)
+        {
+            const anObject *a = (*it2);
+            
+            int x = a->x();
+            int y = a->y();
+            int rotation = a->rotation();
+            bool flipH = a->flip_horizontal();
+            bool top   = a->top();
+            const char *type = a->type()->c_str();
+            const char *n = a->name()->c_str();
+            
+            //NSLog(@"name : %s", n);
+        }
     }
     
-    [arr removeAllObjects];
-   
-     NSLog(@"Allocating complex object from cache...");
+    end = [NSDate date].timeIntervalSince1970;
     
-    NSTimeInterval totalCache = 0;
-    
-    for(int i = 0; i < kNumTests; i++)
-    {
-        NSTimeInterval start = [[NSDate date] timeIntervalSince1970];
-        
-        MyCustomComplexObject *a = [[[MyCustomComplexObject alloc] init] autorelease];
-        [arr addObject:a];
-        
-        NSTimeInterval end = [[NSDate date] timeIntervalSince1970];
-        
-        totalCache += end - start;
-    }
-    
-    NSLog(@"Done allocations of complex object from cache.  Total of %f seconds | Avg of %f seconds", totalCache, totalCache / kNumTests);
-    NSLog(@"New vs. cache ratio: %f, less than 1.0 means caching is faster", totalCache/total );
-    
-    [arr release];
+    NSLog(@"Read time -> %lf", end - start);
+
 }
 
 
