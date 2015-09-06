@@ -26,11 +26,11 @@
     [super tearDown];
 }
 
-static const int kNumTests = 1000;
+static const int kNumTests = 10000;
 
 -(void)testNSArray
 {
-    NSMutableArray *arr = [NSMutableArray array];
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:kNumTests];
     
     for (int i = 0; i < kNumTests; i++)
     {
@@ -41,7 +41,7 @@ static const int kNumTests = 1000;
     {
         NSObject *obj = arr[i];
         
-        NSLog(@"Address is %@", obj);
+        void * addr = &obj + 2;
     }
 }
 
@@ -51,7 +51,7 @@ using namespace std;
 
 -(void)testSTLVector
 {
-    vector<NSObject *> arr;
+    vector<NSObject *> arr(kNumTests);
     
     for (int i = 0; i < kNumTests; i++)
     {
@@ -61,8 +61,8 @@ using namespace std;
     for (int i = 0; i < kNumTests; i++)
     {
         NSObject *obj = arr[i];
-        
-        NSLog(@"Address is %@", obj);
+       
+        void * addr = &obj + 2;
     }
 }
 
