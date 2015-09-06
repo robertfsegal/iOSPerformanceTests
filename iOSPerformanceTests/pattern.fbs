@@ -1,0 +1,30 @@
+table anObject {
+  x:float;
+  rotation:float;
+  y:float;
+  flip_horizontal:bool;
+  top:bool;
+  type:string;
+  name:string;
+  group:string;
+}
+
+table aGroup {
+  objects:[anObject];
+  name:string;
+}
+
+table aHeader {
+  width:int;
+  height:int;
+  nav_map:string;
+}
+
+table pattern
+{
+  groups:[aGroup];
+  header:aHeader;
+}
+
+root_type pattern;
+
