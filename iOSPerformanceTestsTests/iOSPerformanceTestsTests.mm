@@ -35,13 +35,15 @@
     [super tearDown];
 }
 
+static int kNumTests = 1000;
+
 -(void)testPlistRead
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"pattern-flatbuffers-test.plist" ofType:@""];
 
     NSTimeInterval start = [NSDate date].timeIntervalSince1970;
     
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < kNumTests; i++)
     {
       NSDictionary *p = [NSDictionary dictionaryWithContentsOfFile:path];
     }
@@ -80,31 +82,33 @@
 -(void)testFlatBufferRead
 {
     flatbuffers::Parser parser;
+    std::string         sData;
+    const char*         cData;
+    // std::string schemafile;
+    // NSString *schemaPath = [[NSBundle mainBundle] pathForResource:@"pattern.fbs" ofType:@""];
     
-  //  std::string schemafile;
-    std::string jsonfile;
-    
-   // NSString *schemaPath = [[NSBundle mainBundle] pathForResource:@"pattern.fbs" ofType:@""];
-    NSString *dataPath   = [[NSBundle mainBundle] pathForResource:@"pattern-flatbuffers-test.plist.bin" ofType:@""];
+    NSString *dataFilePath   = [[NSBundle mainBundle] pathForResource:@"pattern-flatbuffers-test.plist.bin" ofType:@""];
  
-    const char* patternPath = [dataPath UTF8String];
+    const char* patternPath = [dataFilePath UTF8String];
+    
     
     NSTimeInterval start = [NSDate date].timeIntervalSince1970;
     
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < kNumTests; i++)
     {
-        flatbuffers::LoadFile(patternPath, true, &jsonfile);
-        
-        //const pattern *g = Getpattern(jsonfile.c_str());
+        flatbuffers::LoadFile(patternPath, true, &sData);
+        const pattern *p = Getpattern(cData);
     }
     
     NSTimeInterval end = [NSDate date].timeIntervalSince1970;
     NSLog(@"Parse time -> %lf", end - start);
 
-    const pattern *p = Getpattern(jsonfile.c_str());
+    const pattern *p = Getpattern(cData);
     
     start = [NSDate date].timeIntervalSince1970;
 
+    std::vector<const anObject *> objects;
+    
     for (auto it = p->groups()->begin(); it != p->groups()->end(); ++it)
     {
         const aGroup *g    = (*it);
@@ -120,6 +124,8 @@
             bool top   = a->top();
             const char *type = a->type()->c_str();
             const char *n = a->name()->c_str();
+            
+            objects.push_back(a);
             
             //NSLog(@"name : %s", n);
         }
