@@ -87,16 +87,15 @@ static int kNumTests = 1000;
     // std::string schemafile;
     // NSString *schemaPath = [[NSBundle mainBundle] pathForResource:@"pattern.fbs" ofType:@""];
     
-    NSString *dataFilePath   = [[NSBundle mainBundle] pathForResource:@"pattern-flatbuffers-test.plist.bin" ofType:@""];
- 
-    const char* patternPath = [dataFilePath UTF8String];
-    
+    NSString   *dataFilePath = [[NSBundle mainBundle] pathForResource:@"pattern-flatbuffers-test.plist.bin" ofType:@""];
+    const char *patternPath  = [dataFilePath UTF8String];
     
     NSTimeInterval start = [NSDate date].timeIntervalSince1970;
     
     for (int i = 0; i < kNumTests; i++)
     {
         flatbuffers::LoadFile(patternPath, true, &sData);
+        cData = sData.c_str();
         const pattern *p = Getpattern(cData);
     }
     

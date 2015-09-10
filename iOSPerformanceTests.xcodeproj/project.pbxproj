@@ -9,20 +9,16 @@
 /* Begin PBXBuildFile section */
 		6F0473621B93ACCF000F2C3A /* MyCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0473611B93ACCF000F2C3A /* MyCustomObject.m */; };
 		6F0473651B93AF6C000F2C3A /* MyCustomComplexObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0473641B93AF6C000F2C3A /* MyCustomComplexObject.m */; };
-		6F047C5A1B9BEF2E00C53C29 /* idl_gen_cpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C541B9BEF2E00C53C29 /* idl_gen_cpp.cpp */; };
-		6F047C5B1B9BEF2E00C53C29 /* idl_gen_cpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C541B9BEF2E00C53C29 /* idl_gen_cpp.cpp */; };
-		6F047C5C1B9BEF2E00C53C29 /* idl_gen_fbs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C551B9BEF2E00C53C29 /* idl_gen_fbs.cpp */; };
-		6F047C5D1B9BEF2E00C53C29 /* idl_gen_fbs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C551B9BEF2E00C53C29 /* idl_gen_fbs.cpp */; };
-		6F047C5E1B9BEF2E00C53C29 /* idl_gen_general.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C561B9BEF2E00C53C29 /* idl_gen_general.cpp */; };
-		6F047C5F1B9BEF2E00C53C29 /* idl_gen_general.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C561B9BEF2E00C53C29 /* idl_gen_general.cpp */; };
-		6F047C601B9BEF2E00C53C29 /* idl_gen_go.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C571B9BEF2E00C53C29 /* idl_gen_go.cpp */; };
-		6F047C611B9BEF2E00C53C29 /* idl_gen_go.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C571B9BEF2E00C53C29 /* idl_gen_go.cpp */; };
-		6F047C621B9BEF2E00C53C29 /* idl_gen_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C581B9BEF2E00C53C29 /* idl_gen_text.cpp */; };
-		6F047C631B9BEF2E00C53C29 /* idl_gen_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C581B9BEF2E00C53C29 /* idl_gen_text.cpp */; };
-		6F047C641B9BEF2E00C53C29 /* idl_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C591B9BEF2E00C53C29 /* idl_parser.cpp */; };
-		6F047C651B9BEF2E00C53C29 /* idl_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F047C591B9BEF2E00C53C29 /* idl_parser.cpp */; };
 		6F047C681B9BF15700C53C29 /* pattern.fbs in Resources */ = {isa = PBXBuildFile; fileRef = 6F047C671B9BF15700C53C29 /* pattern.fbs */; };
 		6F047C691B9BF15700C53C29 /* pattern.fbs in Resources */ = {isa = PBXBuildFile; fileRef = 6F047C671B9BF15700C53C29 /* pattern.fbs */; };
+		6F2A38EF1BA2326B0080D038 /* idl_gen_cpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A38E71BA2326B0080D038 /* idl_gen_cpp.cpp */; };
+		6F2A38F01BA2326B0080D038 /* idl_gen_fbs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A38E81BA2326B0080D038 /* idl_gen_fbs.cpp */; };
+		6F2A38F11BA2326B0080D038 /* idl_gen_general.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A38E91BA2326B0080D038 /* idl_gen_general.cpp */; };
+		6F2A38F21BA2326B0080D038 /* idl_gen_go.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A38EA1BA2326B0080D038 /* idl_gen_go.cpp */; };
+		6F2A38F31BA2326B0080D038 /* idl_gen_python.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A38EB1BA2326B0080D038 /* idl_gen_python.cpp */; };
+		6F2A38F41BA2326B0080D038 /* idl_gen_text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A38EC1BA2326B0080D038 /* idl_gen_text.cpp */; };
+		6F2A38F51BA2326B0080D038 /* idl_parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A38ED1BA2326B0080D038 /* idl_parser.cpp */; };
+		6F2A38F61BA2326B0080D038 /* reflection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A38EE1BA2326B0080D038 /* reflection.cpp */; };
 		6F9EB5CA1B9CC8D500548248 /* pattern-flatbuffers-test.plist.bin in Resources */ = {isa = PBXBuildFile; fileRef = 6F9EB5C91B9CC8D500548248 /* pattern-flatbuffers-test.plist.bin */; };
 		6F9EB5CC1B9CC8FD00548248 /* pattern-flatbuffers-test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F9EB5CB1B9CC8FD00548248 /* pattern-flatbuffers-test.plist */; };
 		6FAFEEF31B80494E00258756 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFEEF21B80494E00258756 /* main.m */; };
@@ -49,18 +45,22 @@
 		6F0473611B93ACCF000F2C3A /* MyCustomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomObject.m; sourceTree = "<group>"; };
 		6F0473631B93AF6C000F2C3A /* MyCustomComplexObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomComplexObject.h; sourceTree = "<group>"; };
 		6F0473641B93AF6C000F2C3A /* MyCustomComplexObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomComplexObject.m; sourceTree = "<group>"; };
-		6F047C4F1B9BEF2E00C53C29 /* flatbuffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flatbuffers.h; sourceTree = "<group>"; };
-		6F047C501B9BEF2E00C53C29 /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
-		6F047C511B9BEF2E00C53C29 /* idl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idl.h; sourceTree = "<group>"; };
-		6F047C521B9BEF2E00C53C29 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
-		6F047C541B9BEF2E00C53C29 /* idl_gen_cpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_cpp.cpp; sourceTree = "<group>"; };
-		6F047C551B9BEF2E00C53C29 /* idl_gen_fbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_fbs.cpp; sourceTree = "<group>"; };
-		6F047C561B9BEF2E00C53C29 /* idl_gen_general.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_general.cpp; sourceTree = "<group>"; };
-		6F047C571B9BEF2E00C53C29 /* idl_gen_go.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_go.cpp; sourceTree = "<group>"; };
-		6F047C581B9BEF2E00C53C29 /* idl_gen_text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_text.cpp; sourceTree = "<group>"; };
-		6F047C591B9BEF2E00C53C29 /* idl_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_parser.cpp; sourceTree = "<group>"; };
 		6F047C661B9BF15700C53C29 /* pattern_generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pattern_generated.h; sourceTree = "<group>"; };
 		6F047C671B9BF15700C53C29 /* pattern.fbs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pattern.fbs; sourceTree = "<group>"; };
+		6F2A38E11BA2325B0080D038 /* flatbuffers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flatbuffers.h; sourceTree = "<group>"; };
+		6F2A38E21BA2325B0080D038 /* idl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = idl.h; sourceTree = "<group>"; };
+		6F2A38E31BA2325B0080D038 /* reflection_generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reflection_generated.h; sourceTree = "<group>"; };
+		6F2A38E41BA2325B0080D038 /* reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reflection.h; sourceTree = "<group>"; };
+		6F2A38E51BA2325B0080D038 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		6F2A38E61BA2325B0080D038 /* hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash.h; sourceTree = "<group>"; };
+		6F2A38E71BA2326B0080D038 /* idl_gen_cpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_cpp.cpp; sourceTree = "<group>"; };
+		6F2A38E81BA2326B0080D038 /* idl_gen_fbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_fbs.cpp; sourceTree = "<group>"; };
+		6F2A38E91BA2326B0080D038 /* idl_gen_general.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_general.cpp; sourceTree = "<group>"; };
+		6F2A38EA1BA2326B0080D038 /* idl_gen_go.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_go.cpp; sourceTree = "<group>"; };
+		6F2A38EB1BA2326B0080D038 /* idl_gen_python.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_python.cpp; sourceTree = "<group>"; };
+		6F2A38EC1BA2326B0080D038 /* idl_gen_text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_gen_text.cpp; sourceTree = "<group>"; };
+		6F2A38ED1BA2326B0080D038 /* idl_parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = idl_parser.cpp; sourceTree = "<group>"; };
+		6F2A38EE1BA2326B0080D038 /* reflection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = reflection.cpp; sourceTree = "<group>"; };
 		6F9EB5C91B9CC8D500548248 /* pattern-flatbuffers-test.plist.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "pattern-flatbuffers-test.plist.bin"; sourceTree = "<group>"; };
 		6F9EB5CB1B9CC8FD00548248 /* pattern-flatbuffers-test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "pattern-flatbuffers-test.plist"; sourceTree = "<group>"; };
 		6FAFEEED1B80494E00258756 /* iOSPerformanceTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSPerformanceTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,10 +116,12 @@
 		6F047C4E1B9BEF2E00C53C29 /* flatbuffers */ = {
 			isa = PBXGroup;
 			children = (
-				6F047C4F1B9BEF2E00C53C29 /* flatbuffers.h */,
-				6F047C501B9BEF2E00C53C29 /* hash.h */,
-				6F047C511B9BEF2E00C53C29 /* idl.h */,
-				6F047C521B9BEF2E00C53C29 /* util.h */,
+				6F2A38E11BA2325B0080D038 /* flatbuffers.h */,
+				6F2A38E21BA2325B0080D038 /* idl.h */,
+				6F2A38E31BA2325B0080D038 /* reflection_generated.h */,
+				6F2A38E41BA2325B0080D038 /* reflection.h */,
+				6F2A38E51BA2325B0080D038 /* util.h */,
+				6F2A38E61BA2325B0080D038 /* hash.h */,
 			);
 			path = flatbuffers;
 			sourceTree = "<group>";
@@ -127,12 +129,14 @@
 		6F047C531B9BEF2E00C53C29 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				6F047C541B9BEF2E00C53C29 /* idl_gen_cpp.cpp */,
-				6F047C551B9BEF2E00C53C29 /* idl_gen_fbs.cpp */,
-				6F047C561B9BEF2E00C53C29 /* idl_gen_general.cpp */,
-				6F047C571B9BEF2E00C53C29 /* idl_gen_go.cpp */,
-				6F047C581B9BEF2E00C53C29 /* idl_gen_text.cpp */,
-				6F047C591B9BEF2E00C53C29 /* idl_parser.cpp */,
+				6F2A38E71BA2326B0080D038 /* idl_gen_cpp.cpp */,
+				6F2A38E81BA2326B0080D038 /* idl_gen_fbs.cpp */,
+				6F2A38E91BA2326B0080D038 /* idl_gen_general.cpp */,
+				6F2A38EA1BA2326B0080D038 /* idl_gen_go.cpp */,
+				6F2A38EB1BA2326B0080D038 /* idl_gen_python.cpp */,
+				6F2A38EC1BA2326B0080D038 /* idl_gen_text.cpp */,
+				6F2A38ED1BA2326B0080D038 /* idl_parser.cpp */,
+				6F2A38EE1BA2326B0080D038 /* reflection.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -309,16 +313,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F2A38F41BA2326B0080D038 /* idl_gen_text.cpp in Sources */,
 				6FAFEEF91B80494E00258756 /* ViewController.m in Sources */,
-				6F047C621B9BEF2E00C53C29 /* idl_gen_text.cpp in Sources */,
 				6FAFEEF61B80494E00258756 /* AppDelegate.m in Sources */,
-				6F047C641B9BEF2E00C53C29 /* idl_parser.cpp in Sources */,
 				6FAFEEF31B80494E00258756 /* main.m in Sources */,
-				6F047C5E1B9BEF2E00C53C29 /* idl_gen_general.cpp in Sources */,
+				6F2A38F11BA2326B0080D038 /* idl_gen_general.cpp in Sources */,
 				6F0473621B93ACCF000F2C3A /* MyCustomObject.m in Sources */,
-				6F047C5C1B9BEF2E00C53C29 /* idl_gen_fbs.cpp in Sources */,
-				6F047C601B9BEF2E00C53C29 /* idl_gen_go.cpp in Sources */,
-				6F047C5A1B9BEF2E00C53C29 /* idl_gen_cpp.cpp in Sources */,
+				6F2A38F01BA2326B0080D038 /* idl_gen_fbs.cpp in Sources */,
+				6F2A38F31BA2326B0080D038 /* idl_gen_python.cpp in Sources */,
+				6F2A38F51BA2326B0080D038 /* idl_parser.cpp in Sources */,
+				6F2A38F21BA2326B0080D038 /* idl_gen_go.cpp in Sources */,
+				6F2A38EF1BA2326B0080D038 /* idl_gen_cpp.cpp in Sources */,
+				6F2A38F61BA2326B0080D038 /* reflection.cpp in Sources */,
 				6F0473651B93AF6C000F2C3A /* MyCustomComplexObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,13 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F047C5B1B9BEF2E00C53C29 /* idl_gen_cpp.cpp in Sources */,
-				6F047C631B9BEF2E00C53C29 /* idl_gen_text.cpp in Sources */,
 				6FAFEF0D1B80494E00258756 /* iOSPerformanceTestsTests.mm in Sources */,
-				6F047C5D1B9BEF2E00C53C29 /* idl_gen_fbs.cpp in Sources */,
-				6F047C611B9BEF2E00C53C29 /* idl_gen_go.cpp in Sources */,
-				6F047C5F1B9BEF2E00C53C29 /* idl_gen_general.cpp in Sources */,
-				6F047C651B9BEF2E00C53C29 /* idl_parser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
